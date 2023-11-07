@@ -4,7 +4,7 @@ practice 2023-11-07
 
 import requests
 from requests import HTTPError
-import json
+import datetime as dt
 
 """Task 1. Parse PrivatBank Api, write function to see currency
 *Add to git file, with flake8, gitignore, requirments.txt
@@ -27,12 +27,11 @@ def get_request(url: str) -> dict:
 def save_result(result_json: dict):
     with open('currency_today_date_privat', mode='w') as file:
         for row in result_json:
-            file.writelines(f"Currency: {row['ccy']}. Buy: {row['buy']}. Sale: {row['buy']}\n")
+            dt_today = dt.datetime.today().strftime('%Y-%m-%d')
+            file.writelines(f"[{dt_today}]  Currency: {row['ccy']}. Buy: {row['buy']}. Sale: {row['buy']}\n")
 
 
 PB_API_1 = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
-PB_API_2 = ''
-
 result = get_request(PB_API_1)
 
 save_result(result) if result else False
