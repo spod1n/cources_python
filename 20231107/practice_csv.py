@@ -17,4 +17,4 @@ with open(file, mode='r', encoding='utf-8') as file:
         elif 'P' in field['product_price']:
             product_price += float(f"0.{field['product_price'].replace('P', '').strip()}")
 
-    print(f'Загальна ціна: {round(product_price, 2)}')
+    print(f'Загальна ціна: {round(product_price, 2)} £')
