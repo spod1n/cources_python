@@ -1,0 +1,6 @@
+{
+  'coord': {'lon': 30.5167, "lat": 50.4333},
+  'weather': [{'id': 802, 'main': 'Clouds', 'description': 'scattered clouds', 'icon': '03d'}],
+  'base': 'stations',
+  'main': {
+    'temp': 285.77, 'feels_like': 285.36, 'temp_min': 285.77, 'temp_max': 285.77, 'pressure': 999, 'humidity': 87}, 'visibility': 10000, 'wind': {'speed': 0.45, 'deg': 227, 'gust': 1.34}, 'clouds': {'all': 41}, 'dt': 1699175601, 'sys': {'type': 2, 'id': 2003742, 'country': 'UA', 'sunrise': 1699160071, 'sunset': 1699194508}, 'timezone': 7200, 'id': 703448, 'name': 'Kyiv', 'cod': 200}
