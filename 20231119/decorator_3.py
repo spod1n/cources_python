@@ -1,6 +1,5 @@
 """
 # Task 3. Використати декоратор, який буде зберігати cache, реалізувати для чисел Фіббоначі
-
 # * - додаткова зробити власний декоратор memoize, та використати декоратор lru_cache, який буде працювати швидше
 """
 
@@ -20,7 +19,13 @@ def timer(func):
 
 
 @timer
-@lru_cache(maxsize=3)
+@cache
+def fibonacci_cache(n):
+    return n if n <= 1 else fibonacci_cache(n-1) + fibonacci_cache(n-2)
+
+
+@timer
+@lru_cache(maxsize=4)
 def fibonacci_lru_cache(n):
     return n if n <= 1 else fibonacci_lru_cache(n-1) + fibonacci_lru_cache(n-2)
 
@@ -42,5 +47,6 @@ def fibonacci_memorize(n):
     return n if n <= 1 else fibonacci_memorize(n-1) + fibonacci_memorize(n-2)
 
 
-print(fibonacci_lru_cache(10))
-print(fibonacci_memorize(10))
+print(fibonacci_cache(100))
+print(fibonacci_lru_cache(100))
+print(fibonacci_memorize(100))
