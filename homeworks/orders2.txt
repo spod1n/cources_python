@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Access to this site is blocked</title>
+<link rel="stylesheet" href="https://www.mailcontrol.com/css/hybrid_block.css" type="text/css">
+</head>
+<body style="margin-left: 0px">
+    <div style="border: 1px solid #285EA6;width: 95%; max-width: 700px; overflow: hidden; margin-left: 1px; background-color: #EEF2F7;">
+    <div style="cursor: pointer"
+        onclick="window.open('https://drive.google.com/uc?id=1IOPTVq2ooQfZRkF3rAjGkTjRtbotG7FF', 'Websense', 'toolbar=no,width=700,height=500');"
+    title="Content blocked by Teva acceptable use policy.. Click for details.">
+    <div  style="float: left; margin: 0">
+    <img src="https://www.mailcontrol.com/images/block.png">
+    </div>
+    <h1  id="blockMessage">Content blocked by Teva acceptable use policy.</h1>
+    <div style="float: none; clear: both"></div>
+    </div>
+    <!-- This displays the reason the site was blocked -->
+    <p class="label"> Reason:</p>
+    <p class="first-option" id="reason-text">This Forcepoint Category is filtered: Isolation Cloud Storage</p>
+
+    <p class="label">URL:</p>
+    <p id="url-text">https://drive.google.com/uc?id=1IOPTVq2ooQfZRkF3rAjGkTjRtbotG7FF</p>
+    <div id="options">
+    <p class="label">Message:</p>
+    <p>This Internet URL was blocked in accordance with Teva policy.
+
+In case access is still required for specific business needs, please open Service Now ticket.
+NOTE: For accessing webinars, please use the Webinar site access request.</p>
+
+
+
+    <form class="option" name="BackForm" action="">
+    <p>Click <b>Go Back</b> or use the browser's Back button
+    to return to the previous page.
+    <input type="button" value="       Go Back       " onClick="parent.history.back()" name="ws-back"></p>
+    </form>
+    <div style="clear: both; overflow: hidden; height: 1px;"></div>
+    </div>
+    <div><img title="Forcepoint" src="https://www.mailcontrol.com/http-resources/notification-pages/2020/notification_page_logo_145x35.png" style="float: right;clear: both;margin: 8px 10px 6px 0px; padding: 2px 0px;" width="145" height="35">
+</div>
+    <div style="clear: both; overflow: hidden; height:1px;"></div>
+    </div>
+    <div><script type="text/javascript">var Base64 = {
+// private property
+_keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+// public method for encoding
+encode : function (input) {
+var output = "";
+var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+var i = 0;
+input = Base64._utf8_encode(input);
+while (i < input.length) {
+chr1 = input.charCodeAt(i++);
+chr2 = input.charCodeAt(i++);
+chr3 = input.charCodeAt(i++);
+enc1 = chr1 >> 2;
+enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+enc4 = chr3 & 63;
+if (isNaN(chr2)) {
+enc3 = enc4 = 64;
+} else if (isNaN(chr3)) {
+enc4 = 64;
+}
+output = output +
+this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+}
+return output;
+},
+// private method for UTF-8 encoding
+_utf8_encode : function (string) {
+string = string.replace(/\r\n/g,"\n");
+var utftext = "";
+for (var n = 0; n < string.length; n++) {
+var c = string.charCodeAt(n);
+if (c < 128) {
+utftext += String.fromCharCode(c);
+}
+else if((c > 127) && (c < 2048)) {
+utftext += String.fromCharCode((c >> 6) | 192);
+utftext += String.fromCharCode((c & 63) | 128);
+}
+else {
+utftext += String.fromCharCode((c >> 12) | 224);
+utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+utftext += String.fromCharCode((c & 63) | 128);
+}
+}
+return utftext;
+}
+}
+var urltorbi = document.getElementsByName('url');
+var urltorbi = urltorbi[0].value;
+var urltorbi = unescape(urltorbi);
+
+var celement = document.getElementById('continue-text');
+if (typeof(celement) != 'undefined' && celement != null) {
+// Exists.
+var user = document.getElementsByName("username")[0].value;
+var user = user.split("/");
+var user = user[3];
+}
+var encodeduri = Base64.encode('Shield-TenantID=5ac4b8bd-3ece-453a-819f-ca20075f1cbe'+'&url='+urltorbi);
+if (typeof(celement) != 'undefined' && celement != null) {
+// Exists.
+document.getElementById("continue-text").innerHTML ="</form><form class='isolate' action='https://shield.ericomcloud.net/' method='get'><input type='hidden' name='url' value='"+urltorbi+"'>Click <b>Isolate</b> to view this page for work-related reasons in Isolated Browser <input type='hidden' name='SD' value='"+encodeduri+"'><input type='submit' value='Isolate' name=''></p>";
+}
+var qelement = document.getElementById('quota-text');
+if (typeof(qelement) != 'undefined' && qelement != null) {
+// Exists.
+location.replace("https://shield.ericomcloud.net/?url="+urltorbi+"&SD="+encodeduri);
+}
+</script></div>
+        <!-- __DEBUG_INFO__ -->
+</body>
+</html>
