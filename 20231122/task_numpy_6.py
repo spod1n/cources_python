@@ -31,4 +31,4 @@ alternative_diagonal = np.diagonal(reverse_matrix)
 print(f'alternative diagonal: {alternative_diagonal}', end='\n\n')
 
 elements = alternative_diagonal[alternative_diagonal > sum_diagonal]
-print(f'elements what more than sum of main diagonal: {elements}' )
+print(f'elements what more than sum of main diagonal: {elements}')
