@@ -40,3 +40,4 @@ df[(df['sepal_length'] >= 3.15) & (df['petal_length'] <= 4.5)]
 
 # Upload tips(seaborn) - df_tips
 # EDA(head, tail, sample, hist, info, shape, unique, ...)
+

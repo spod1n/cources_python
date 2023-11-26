@@ -8,9 +8,6 @@ def get_ds_sns(name_ds: str) -> pandas.DataFrame:
     return sns.load_dataset(name_ds)
 
 
-def show_boxplot():
-    pass
-
 df_tips = get_ds_sns('tips')
 
 # Task 1 - Який середній розмір чайових залежно від статі клієнта?
