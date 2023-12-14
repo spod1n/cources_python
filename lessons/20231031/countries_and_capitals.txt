@@ -1,0 +1,3 @@
+Country: UK. Capital is: London
+Country: Germany. Capital is: Berlin
+Country: Ukraine. Capital is: Kyiv
