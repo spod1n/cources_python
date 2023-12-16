@@ -1,0 +1,51 @@
+Materials Python two part theory and practise.
+
+1 - theory:
+	1. https://realpython.com
+	2. https://www.hackerrank.com
+	3. https://docs.python.org/3/
+	4. https://www.w3schools.com/python/default.asp
+	5. https://www.freecodecamp.org/learn/scientific-computing-with-python/#python-for-everybody
+	6. https://www.coursera.org/
+	7. https://learn-anything.xyz/programming/programming-languages/javascript - all info 
+
+
+
+2 - practise:
+	1. https://www.codewars.com/dashboard
+	2. https://leetcode.com
+	3. https://projecteuler.net
+	4. https://pynative.com/python-exercises-with-solutions/
+	5. https://www.hackerrank.com
+
+
+
+Machine Learning:
+	1. https://nbviewer.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb
+	2. https://www.youtube.com/playlist?list=PL7y-1rk2cCsA339crwXMWUaBRuLBvPBCg
+	3. https://github.com/CodingTrain/Machine-Learning
+
+
+
+
+Math
+Theory:
+	1. https://brilliant.org/courses/probability-fundamentals/introduction-75/what-is-probability/2/
+	2. https://www.khanacademy.org/math/integral-calculus
+	3. https://projects.iq.harvard.edu/stat110/youtube
+	4. https://www.datasciencecentral.com/a-cheat-sheet-on-probability/
+
+
+
+Швидкість друку: 
+    1. https://www.ratatype.ua/ru/typing-test/
+    2. https://10fastfingers.com/typing-test/english
+    3. https://www.speedcoder.net/
+
+
+Перекладач:
+	1. https://www.deepl.com/translator
+
+Online speaking:
+	1. https://grow.google/certificates/interview-warmup/category/general/all-questions/
+	
