@@ -75,14 +75,35 @@ def check_index_error(func):
 
 
 @check_division_error
-def divide(a, b):
+def divide(a: float, b: float) -> float:
+    """ Функція ділення.
+
+    :param a: ділене
+    :param b: дільник
+    :return: частка
+    """
+
     return a / b
 
 
 @check_index_error
-def get_element(lst, idx):
+def get_element(lst: list, idx: int):
+    """ Функція повернення елементу списку за його індексом.
+
+    :param lst: Список
+    :param idx: Індекс елементу
+    :return: Елемент
+    """
     return lst[idx]
 
 
-print(divide(10, 2))
-print(get_element([1, 2, 3], 1))
+# сomment rows with false to get to the end
+
+# TEST DIVIDE
+print(divide(10, 2))    # True
+print(divide(5, 0))     # False
+
+# TEST GET ELEMENT
+print(get_element([1, 2, 3], 1))    # True
+print(get_element([1, 2, 3], 5))    # False
+print(get_element([], 0))           # False
