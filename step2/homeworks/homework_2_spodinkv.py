@@ -32,3 +32,14 @@
 8. Закінчіть завдання, надславши код декораторів та тестів.
 """
 
+
+def check_division_error(func):
+    def wrapper(*args, **kwargs):
+        ...
+    return wrapper
+
+
+def check_index_error(func):
+    def wrapper(*args, **kwargs):
+        ...
+    return wrapper
