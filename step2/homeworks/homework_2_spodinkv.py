@@ -35,11 +35,23 @@
 
 def check_division_error(func):
     def wrapper(*args, **kwargs):
-        ...
+        try:
+            result = func(*args, **kwargs)
+        except ZeroDivisionError:
+            print("Error: Division by zero.")
+            raise SystemExit(1)
+        return result
+
     return wrapper
 
 
 def check_index_error(func):
     def wrapper(*args, **kwargs):
-        ...
+        try:
+            result = func(*args, **kwargs)
+        except IndexError:
+            print("Error: Index out of range.")
+            raise SystemExit(1)
+        return result
+
     return wrapper
