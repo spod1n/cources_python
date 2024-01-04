@@ -22,10 +22,19 @@
 """
 
 
-def is_prime(num):
+def is_prime(num: int) -> bool:
+    """ Функція для перевірки числа на просте.
+
+    :param num: Вхідне число
+    :return: Просте число чи ні
+    """
+
     if num <= 1:
         return False
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(num ** 0.5) + 1):
         if num % i == 0:
             return False
     return True
+
+
+print(is_prime(101))
