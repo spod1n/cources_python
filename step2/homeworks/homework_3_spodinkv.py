@@ -83,4 +83,19 @@ def find_primes_multi_thread(start, end):
     return result1 + result2
 
 
-print(find_primes_multi_thread(-100, 100))
+def test_functions() -> None:
+    """ Тестові випадки для обох функцій для перевірки - чи вони повертають однаковий результат.
+
+    :return: None
+    """
+    start, end = 1, 100
+
+    single_thread_result = find_primes_single_thread(start, end)
+    multi_thread_result = find_primes_multi_thread(start, end)
+
+    assert single_thread_result == multi_thread_result
+
+    print('Test passed.')
+
+
+test_functions()
