@@ -37,4 +37,17 @@ def is_prime(num: int) -> bool:
     return True
 
 
-print(is_prime(101))
+def find_primes_single_thread(start: int, end: int) -> list:
+    """ Функція для знаходження простих чисел в діапазоні.
+
+    :param start: Початок діапазону перевірки
+    :param end: Кінець діапазону перевірки
+    :return: Прості числа
+    """
+
+    return [num for num in range(start, end+1) if is_prime(num)]
+
+
+
+
+print(find_primes_single_thread(-100, 100))
