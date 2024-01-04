@@ -21,6 +21,8 @@
 7. Закінчіть завдання, надславши код програми в ЛМС
 """
 
+import threading
+
 
 def is_prime(num: int) -> bool:
     """ Функція для перевірки числа на просте.
@@ -45,9 +47,40 @@ def find_primes_single_thread(start: int, end: int) -> list:
     :return: Прості числа
     """
 
-    return [num for num in range(start, end+1) if is_prime(num)]
+    return [num for num in range(start, end + 1) if is_prime(num)]
 
 
+def find_primes_multi_thread(start, end):
+    """ Функція для знаходження простих чисел в діапазоні у двох потоках.
+
+    :param start: Початок діапазону перевірки
+    :param end: Кінець діапазону перевірки
+    :return: Прості числа
+    """
+
+    def find_primes_range(start_thr, end_thr, result_thr):
+        """ Функція для потоку. Додає до результату потоку дані розширенням списку.
+
+        :param start_thr: Початок діапазону перевірки потоку
+        :param end_thr: Кінець діапазону перевірки потоку
+        :param result_thr: Список з результатами потоку
+        :return: Прості числа
+        """
+        result_thr.extend(find_primes_single_thread(start_thr, end_thr))
+
+    result1, result2 = [], []
+    mid = (start + end) // 2
+
+    thread1 = threading.Thread(target=find_primes_range, args=(start, mid, result1))
+    thread2 = threading.Thread(target=find_primes_range, args=(mid+1, end, result2))
+
+    thread1.start()
+    thread2.start()
+
+    thread1.join()
+    thread2.join()
+
+    return result1 + result2
 
 
-print(find_primes_single_thread(-100, 100))
+print(find_primes_multi_thread(-100, 100))
