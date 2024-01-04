@@ -21,6 +21,7 @@
 7. Закінчіть завдання, надславши код програми в ЛМС
 """
 
+import time
 import threading
 
 
@@ -39,6 +40,26 @@ def is_prime(num: int) -> bool:
     return True
 
 
+def check_time(func):
+    """ Декоратор для вимірювання часу роботи функції
+
+    :param func: Функція яку обгортаємо
+    :return: Результат обгортки
+    """
+
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        execution_time = time.time() - start_time
+
+        print(f"Function '{func.__name__}' took {execution_time:.6f} seconds to execute.")
+
+        return result
+
+    return wrapper
+
+
+@check_time
 def find_primes_single_thread(start: int, end: int) -> list:
     """ Функція для знаходження простих чисел в діапазоні.
 
@@ -50,6 +71,7 @@ def find_primes_single_thread(start: int, end: int) -> list:
     return [num for num in range(start, end + 1) if is_prime(num)]
 
 
+@check_time
 def find_primes_multi_thread(start, end):
     """ Функція для знаходження простих чисел в діапазоні у двох потоках.
 
@@ -66,13 +88,14 @@ def find_primes_multi_thread(start, end):
         :param result_thr: Список з результатами потоку
         :return: Прості числа
         """
-        result_thr.extend(find_primes_single_thread(start_thr, end_thr))
+        # result_thr.extend(find_primes_single_thread(start_thr, end_thr))
+        result_thr.extend([num for num in range(start_thr, end_thr + 1) if is_prime(num)])
 
     result1, result2 = [], []
     mid = (start + end) // 2
 
     thread1 = threading.Thread(target=find_primes_range, args=(start, mid, result1))
-    thread2 = threading.Thread(target=find_primes_range, args=(mid+1, end, result2))
+    thread2 = threading.Thread(target=find_primes_range, args=(mid + 1, end, result2))
 
     thread1.start()
     thread2.start()
@@ -83,19 +106,35 @@ def find_primes_multi_thread(start, end):
     return result1 + result2
 
 
-def test_functions() -> None:
+def functions_test(start: int, end: int) -> None:
     """ Тестові випадки для обох функцій для перевірки - чи вони повертають однаковий результат.
 
+    :param start: Початок тестового діапазону
+    :param end: Кінець тестового діапазону
     :return: None
     """
-    start, end = 1, 100
 
     single_thread_result = find_primes_single_thread(start, end)
     multi_thread_result = find_primes_multi_thread(start, end)
 
     assert single_thread_result == multi_thread_result
 
-    print('Test passed.')
+    print('Test passed.', end='\n\n')
 
 
-test_functions()
+if __name__ == '__main__':
+    # Висновок: Двупотокова перевірка числа на просте - швидше за однопотокову.
+    # Різниця часу відпрацювання функцій прямопропорційна розміру діапазону.
+    #
+
+    functions_test(1, 100)
+
+    _start, _end = 1, 1000
+    print(_start, _end, sep=' - ', end=':\n')
+    find_primes_single_thread(_start, _end)
+    find_primes_multi_thread(_start, _end)
+
+    _start, _end = 1, 1_000_000
+    print(_start, _end, sep=' - ', end=':\n')
+    find_primes_single_thread(_start, _end)
+    find_primes_multi_thread(_start, _end)
