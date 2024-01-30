@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+    <h1> OUR SITE </h1>
+    <h1><span id="dymamicNumber">{{number}}</span></h1>
+</body>
+
+    <script>
+        function updateNumber(){
+        fetch('/get_update_number')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('dynamicNumber').innerText = data.updatedNumber;
+                })
+        }
+
+        document.addEventListener('DOMContentLoaded', updateNumber);
+
+        setInterval(updateNumber, 5000);
+    </script>
+
+</html>

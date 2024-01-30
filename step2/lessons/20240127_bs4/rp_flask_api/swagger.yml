@@ -1,0 +1,163 @@
+openapi: 3.0.0
+info:
+  title: 'RP Flask REST API'
+  description: 'An API about people and notes'
+  version: '1.0.0'
+
+servers:
+  - url: '/api'
+
+components:
+  schemas:
+    Person:
+      type: 'object'
+      required:
+        - 'lname'
+      properties:
+        fname:
+          type: 'string'
+        lname:
+          type: 'string'
+  parameters:
+    lname:
+      name: 'lname'
+      description: 'Last name of person to get'
+      in: 'path'
+      required: 'True'
+      schema:
+        type: 'string'
+    note_id:
+      name: 'note_id'
+      description: 'ID of the note'
+      in: 'path'
+      required: 'True'
+      schema:
+        type: 'integer'
+
+paths:
+  /people:
+    get:
+      operationId: 'people.read_all'
+      tags:
+        - 'People'
+      summary: 'Read the list of people'
+      responses:
+        '200':
+          description: 'Successfully read people list'
+
+    post:
+      operationId: 'people.create'
+      tags:
+        - 'People'
+      summary: 'Create Person'
+      requestBody:
+        description: 'Person to create'
+        required: 'True'
+        content:
+          application/json:
+            schema:
+              x-body-name: 'person'
+              $ref: '#/components/schemas/Person'
+      responses:
+        '201':
+          description: 'Successfully created person'
+  /people/{lname}:
+    get:
+      operationId: 'people.read_one'
+      tags:
+        - 'People'
+      summary: 'Read one person'
+      parameters:
+        - $ref: '#/components/parameters/lname'
+      responses:
+        '200':
+          description: 'Successfully read one person'
+    put:
+      tags:
+        - 'People'
+      operationId: 'people.update'
+      summary: 'Update person'
+      parameters:
+        - $ref: '#/components/parameters/lname'
+      responses:
+        '200':
+          description: 'Successfully update person'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: 'person'
+              $ref: '#/components/schemas/Person'
+    delete:
+      tags:
+        - 'People'
+      operationId: 'people.delete'
+      summary: 'Delete person'
+      parameters:
+        - $ref: '#/components/parameters/lname'
+      responses:
+        '200':
+          description: 'Successfully delete person'
+  /notes:
+    post:
+      operationId: 'notes.create'
+      tags:
+        - 'Notes'
+      summary: 'Create a note associated with a person'
+      requestBody:
+        description: 'Note to create'
+        required: 'True'
+        content:
+          application/json:
+            schema:
+              x-body-name: 'note'
+              type: 'object'
+              properties:
+                person_id:
+                  type: 'integer'
+                content:
+                  type: 'string'
+      responses:
+        '201':
+          description: 'Successfully created note'
+
+  /notes/{note_id}:
+    get:
+      operationId: 'note_read_one'
+      tags:
+        - 'Notes'
+      summary: 'Read one note'
+      parameters:
+        -$ref: '#/components/parameters/note_id'
+      responses:
+        '200':
+          description: 'Successfully one note'
+    put:
+      tags:
+        - 'Notes'
+      operationId: 'notes.update'
+      summary: 'Update a note'
+      parameters:
+        - $ref: '#/components/parameters/note_id'
+      responses:
+        '200':
+          description: 'Successfully update note'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: 'note'
+              type: 'object'
+              properties:
+                content:
+                  type: "string"
+    delete:
+      tags:
+        - 'Notes'
+      operationId: 'notes.delete'
+      summary: 'Delete a note'
+      parameters:
+        - $ref: '#/components/parameters/note_id'
+      responses:
+        '200':
+          description: 'Successfully delete note'
