@@ -1,0 +1,73 @@
+.f1{
+    color: MediumSeaGreen;
+    background-color: Tomato;
+    text-align: center;
+}
+
+.f2{
+    color: Red;
+    background-color: DodgerBlue;
+    text-align: center;
+}
+
+.f3{
+    color: Gray;
+    background-color: Violet;
+    text-align: center;
+}
+
+.f4{
+    color: SlateBlue;
+    background-color: Red;
+    text-align: center;
+}
+
+.f5{
+    color: MediumGreen;
+    background-color: LightGreen;
+    text-align: center;
+}
+
+.f6{
+    color: MediumSeaGreen;
+    background-color: Tomato;
+    text-align: center;
+}
+
+.f7{
+    color: Red;
+    background-color: DodgerBlue;
+    text-align: center;
+}
+
+.f8{
+    color: Gray;
+    background-color: Violet;
+    text-align: center;
+}
+
+.f9{
+    color: SlateBlue;
+    background-color: Red;
+    text-align: center;
+}
+
+.f10{
+    color: MediumGreen;
+    background-color: LightGreen;
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+header{
+    color: Blue;
+    background-color: White;
+    text-align: center;
+}

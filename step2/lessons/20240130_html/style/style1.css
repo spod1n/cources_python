@@ -1,0 +1,41 @@
+.d1{
+    color: MediumSeaGreen;
+    background-color: tomato;
+}
+
+.d2{
+    color: green;
+    background-color: orange;
+}
+
+.d3{
+    color: blue;
+    background-color: SlateBlue;
+}
+
+.bt1{
+    width: 20%;
+    height: 20%;
+    background-color: purple;
+    color: white;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+a{
+    color:white
+}
