@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session is Flask</title>
+</head>
+<body>
+    <h1> Our Form </h1>
+    <form method="POST" action="{{ url_for('set_session') }}">
+        {{ form.csrf_token }}
+        {{ form.name.label }} {{ form.name() }}
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
