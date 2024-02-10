@@ -8,7 +8,7 @@ URL_BASE = 'http://api.openweathermap.org/'
 URL_SUFFIX = 'data/2.5/weather'
 
 PARAMS = {'q': 'Kyiv',
-          'appid': 'b8d14247e07cbf256fc8cace803e3648'
+          'appid': 'API_KEY'
           }
 
 
