@@ -15,6 +15,6 @@ def get_weather(url: str, params: dict) -> float:
 if __name__ == '__main__':
     # перевіряю відповідь API
     result = get_weather('http://api.openweathermap.org/data/2.5/weather',
-                         {'q': 'Kyiv', 'appid': 'b8d14247e07cbf256fc8cace803e3648'}
+                         {'q': 'Kyiv', 'appid': 'API_KEY'}
                          )
     print(type(result), result, sep=', ')
