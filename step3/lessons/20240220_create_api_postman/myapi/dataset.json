@@ -1,0 +1,32 @@
+[
+  {
+    "id": -1,
+    "code": "404",
+    "text": "Page Not found",
+    "status": "ERR"
+  },
+  {
+    "id": -2,
+    "code": "400",
+    "text": "Bad Request",
+    "status": "ERR"
+  },
+  {
+    "id": 0,
+    "title": "",
+    "text": "",
+    "link": ""
+  },
+  {
+    "id": 1,
+    "title": "",
+    "text": "",
+    "link": ""
+  },
+  {
+    "id": 2,
+    "title": "",
+    "text": "",
+    "link": ""
+  }
+]
