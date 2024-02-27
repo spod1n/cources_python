@@ -5,7 +5,7 @@ import pandas as pd
 # DATASET
 file_name = 'penguins.csv'
 penguins = sns.load_dataset("penguins")
-penguins.to_csv(file_name)
+penguins.to_csv(file_name, index=False)
 del penguins
 
 
