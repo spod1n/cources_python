@@ -4,6 +4,7 @@ test.sql
 
 # folders
 tmp/
+flask_session/
 
 # Python
 __pycache__/
