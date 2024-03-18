@@ -20,9 +20,15 @@ print(f'{max_petal_width_setosa=}', end='\n\n')
 petal_length_distribution = iris_df['petal_length'].describe()
 print('describe petal length:', petal_length_distribution.to_markdown(), sep='\n', end='\n\n')
 
+
 # 2.1 Створіть новий DataFrame, в якому будуть лише дані для ірисів виду “versicolor”.
+versicolor_df = iris_df[iris_df['class'] == 'Iris-versicolor'].copy()
+print('iris-versicolor only:', versicolor_df.to_markdown(), sep='\n', end='\n\n')
 
 # 2.2 Відфільтруйте дані для ірисів з довжиною листка (petal length) більше 5.0.
+petal_length_df = iris_df.loc[iris_df['petal_length'] > 5.0].sort_values(by='petal_length')
+print('petal length more than 5:', petal_length_df.to_markdown(), sep='\n', end='\n\n')
+
 
 # 3.1 Яка середня ширина листка (petal width) для кожного виду ірису?
 # 3.2 Яка мінімальна довжина чашелистика (sepal length) для кожного виду ірису?
