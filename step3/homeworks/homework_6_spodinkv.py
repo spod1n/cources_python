@@ -1,3 +1,5 @@
+""" Klymnetii Spodin. Homework Scikit-Learn """
+
 import seaborn as sns
 
 from sklearn.pipeline import Pipeline
